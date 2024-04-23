@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="style.css">
+    <title>QR Code Scanner / Reader
+    </title>
+</head>
+ 
+<body>
+    <div class="container">
+        <h1>Scan QR Codes</h1>
+		<fieldset><form><input id="sitio" placeholder="Sitio"><button>set</button></fieldset></form>
+        <div class="section">
+            <div id="my-qr-reader">
+            </div>
+        </div>
+    </div>
+    <script
+        src="https://unpkg.com/html5-qrcode">
+    </script>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gun/gun.js"></script>
+	<script src="script.js"></script>
+	
+	<script>
+      // Initialize GUN and tell it we will be storing all data under the key 'todos'.
+      //var todos = Gun(['http://10.86:8765/gun']).get('todos')
+	  //todos.set({sitio: "Ariel",detalle: "cordoba"});
+	  var form = $('form')
+      // Listen for submits of the form.
+      form.on('submit', function (event) {
+        // Get the input element.
+        var input = form.find('input')
+		// Tell GUN to store an object,
+        // with as title the value of the input element.
+        //todos.set({sitio: $("#lugar").val(),detalle: $("#deta").val()})
+		let delegacion = ($("#sitio").val())
+		console.log(delegacion)
+        // Clear the input element, so the user is free to enter more todos.
+		//input.val('')
+		 //detalle.val(''))
+        // Prevent default form submit handling.
+        event.preventDefault()
+      })
+	</script>
+	
+</body>
+ 
+</html>
