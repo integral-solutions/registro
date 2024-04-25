@@ -15,7 +15,7 @@ domReady(function () {
     // If found you qr code
     function onScanSuccess(decodeText, decodeResult) {
         console.log($("#sitio").val())
-		var todos = Gun(['http://localhost:8765/gun', 'https://serveo.net:8765/gun']).get('todos')
+		var todos = Gun(['http://localhost:8765/gun', 'http://serveo.net:8765/gun', 'http://192.168.8.101:8765/gun']).get('todos')
 		todos.set({sitio: $("#sitio").val(),detalle: decodeText})
 		//alert("You Qr is : " + decodeText);
     }
